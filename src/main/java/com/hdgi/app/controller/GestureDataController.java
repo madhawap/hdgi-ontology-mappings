@@ -18,15 +18,15 @@ public class GestureDataController {
 
     @GetMapping("/{gestureId}")
     @ApiOperation(value = "Find Gestures by gesture ID",
-                    notes = "Provide a gesture ID if you already know them",
-                    response = Gesture.class)
+            notes = "Provide a gesture ID if you already know them",
+            response = Gesture.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved a gesture"),
             @ApiResponse(code = 401, message = "You are not authorized to view this resource"),
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found") })
     public Gesture getGesture(@ApiParam(value = "ID value for the gesture you need to retrieve", required = true)
-                                  @PathVariable String gestureId) {
+                              @PathVariable String gestureId) {
         return gestures.get(gestureId);
     }
 
@@ -52,7 +52,7 @@ public class GestureDataController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found") })
     public Gesture addGesture(@ApiParam(value = "Gesture model object", required = true)
-                                  @RequestBody Gesture gesture){
+                              @RequestBody Gesture gesture){
         gestures.put(gesture.getId(), gesture);
         return gesture;
     }
