@@ -1,4 +1,20 @@
+# Spring Boot Application Google App Engine Standard with Java 11
 
-# Human Device Gesture Interaction (HDGI) Ontology Mappings
+This sample shows how to deploy a [Spring Boot](https://spring.io/projects/spring-boot)
+application to Google App Engine stadndard.
 
-![](https://img.shields.io/travis/com/madhawap/hdgi-ontology-mappings/master?style=plastic) ![Licence](https://img.shields.io/github/license/madhawap/hdgi-ontology-mappings?style=plastic)
+## Setup
+
+See [Prerequisites](../README.md#Prerequisites).
+
+## Deploying
+
+```bash
+ mvn clean package appengine:deploy
+```
+
+To view your app, use command:
+```
+gcloud app browse
+```
+Or navigate to `https://<your-project-id>.appspot.com`.
