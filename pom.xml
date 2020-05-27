@@ -3,6 +3,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+<!--  <groupId>com.example.appengine</groupId>-->
   <groupId>com.hdgi.app</groupId>
   <artifactId>hdgi-ontology-mapping</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -11,11 +12,11 @@
   The parent pom defines common style checks and testing strategies for our samples.
   Removing or replacing it should not affect the execution of the samples in anyway.
   -->
-  <parent>
-      <groupId>com.google.cloud.samples</groupId>
-      <artifactId>shared-configuration</artifactId>
-      <version>1.0.17</version>
-  </parent>
+<!--  <parent>-->
+<!--      <groupId>com.google.cloud.samples</groupId>-->
+<!--      <artifactId>shared-configuration</artifactId>-->
+<!--      <version>1.0.17</version>-->
+<!--  </parent>-->
 
   <properties>
       <maven.compiler.target>11</maven.compiler.target>
@@ -32,6 +33,7 @@
               <type>pom</type>
               <scope>import</scope>
           </dependency>
+
           <dependency>
               <groupId>org.springframework.cloud</groupId>
               <artifactId>spring-cloud-dependencies</artifactId>
@@ -54,40 +56,22 @@
         </exclusion>
       </exclusions>
     </dependency>
+      <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-swagger2</artifactId>
+          <version>2.9.2</version>
+      </dependency>
+      <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-swagger-ui</artifactId>
+          <version>2.9.2</version>
+      </dependency>
 
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-jetty</artifactId>
         <version>2.3.0.RELEASE</version>
     </dependency>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-test</artifactId>
-          <scope>test</scope>
-          <exclusions>
-              <exclusion>
-                  <groupId>org.junit.vintage</groupId>
-                  <artifactId>junit-vintage-engine</artifactId>
-              </exclusion>
-          </exclusions>
-      </dependency>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <scope>test</scope>
-      </dependency>
-      <dependency>
-          <groupId>au.com.dius</groupId>
-          <artifactId>pact-jvm-provider-junit5-spring</artifactId>
-          <version>4.0.10</version>
-          <scope>test</scope>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-test</artifactId>
-          <version>2.2.1.RELEASE</version>
-          <scope>test</scope>
-      </dependency>
   </dependencies>
 
   <build>

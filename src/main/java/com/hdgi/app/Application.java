@@ -15,15 +15,4 @@ public class Application {
     SpringApplication.run(Application.class, args);
   }
 
-  @GetMapping("/gesture")
-  public String hello() {
-    return "Enter a name after /gesture e.g. /gesture/right_hand_swipe";
-  }
-
-  @RequestMapping(path="/gesture/{name}")
-  public String getMessage(@PathVariable("name") String name) {
-
-    return "Right hand swipe is performed with right hand ;)";
-  }
-
 }
