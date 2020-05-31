@@ -28,7 +28,7 @@ public class Swagger2Configs {
                 .apiInfo(endPointsInfo());
     }
 
-    private ApiInfo apiDetails(){
+    private ApiInfo apiDetails() {
         return new ApiInfo(
                 "Human Device Gesture Interaction (HDGI) Ontology Mapping Service API",
                 "",
