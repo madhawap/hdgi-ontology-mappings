@@ -70,7 +70,8 @@ public class OntologyQueryHandler {
             }
             if (gestureDetails.isEmpty()) {
                 gestureDetails.put("Details", "Not available");
-            } newGesture.setGestureDetails(gestureDetails);
+            }
+            newGesture.setGestureDetails(gestureDetails);
             return newGesture;
         }
     }

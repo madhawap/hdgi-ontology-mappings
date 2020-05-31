@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentMap;
 
 @RestController
 @RequestMapping("/gesture")
-@Api(value="Basic Gesture Information APIs", tags = "Basic Gesture Information")
+@Api(value = "Basic Gesture Information APIs", tags = "Basic Gesture Information")
 public class GestureDataController {
 
     ConcurrentMap<String, Gesture> gestures = new ConcurrentHashMap<>();
@@ -25,9 +25,9 @@ public class GestureDataController {
             @ApiResponse(code = 200, message = "Successfully retrieved a gesture"),
             @ApiResponse(code = 401, message = "You are not authorized to view this resource"),
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found") })
+            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")})
     public Gesture explainGesture(@ApiParam(value = "Name of the gesture", example = "Right_Forearm_Move_Left",
-            required = true) @PathVariable String gestureName){
+            required = true) @PathVariable String gestureName) {
         OntologyQueryHandler newHandler = new OntologyQueryHandler();
         return newHandler.readOntology(gestureName);
     }
@@ -53,8 +53,8 @@ public class GestureDataController {
             @ApiResponse(code = 200, message = "Successfully retrieved the free gesture list"),
             @ApiResponse(code = 401, message = "You are not authorized to view this resource"),
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found") })
-    public List<Gesture> getAllGestures(){
+            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")})
+    public List<Gesture> getAllGestures() {
         return new ArrayList<Gesture>(gestures.values());
     }
 
@@ -66,9 +66,9 @@ public class GestureDataController {
             @ApiResponse(code = 200, message = "Successfully added the gesture"),
             @ApiResponse(code = 401, message = "You are not authorized to view this resource"),
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found") })
+            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")})
     public Gesture addGesture(@ApiParam(value = "Gesture model object", required = true)
-                              @RequestBody Gesture gesture){
+                              @RequestBody Gesture gesture) {
         gestures.put(gesture.getName(), gesture);
         return gesture;
     }
