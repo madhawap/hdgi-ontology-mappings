@@ -54,8 +54,9 @@ public class GestureDataController {
             @ApiResponse(code = 401, message = "You are not authorized to view this resource"),
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")})
-    public List<Gesture> getAllGestures() {
-        return new ArrayList<Gesture>(gestures.values());
+    public ArrayList<String> getAllGestures(){
+        OntologyQueryHandler newHandler = new OntologyQueryHandler();
+        return newHandler.extractAllGestures();
     }
 
     @PostMapping("/new")
